@@ -4,10 +4,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'EB Garamond', serif;
-  background-color: #ffffff;
-  color: #111;
+  background-color: #f5f7fa;
+  color: #212121;
   line-height: 1.8;
   font-size: 18px;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
 }
 
 .container {
@@ -20,18 +22,27 @@ h1 {
   font-size: 3em;
   margin-bottom: 0.3em;
   font-weight: normal;
+  color: #111;
+}
+
+h1:hover {
+  color: #007acc;
+  letter-spacing: 3px;
+  transition: all 0.3s ease;
 }
 
 h2 {
   margin-top: 2em;
   font-size: 1.8em;
   font-weight: normal;
+  color: #222;
 }
 
 h3 {
   margin-top: 1.5em;
   font-size: 1.3em;
   font-weight: normal;
+  color: #333;
 }
 
 p {
@@ -39,14 +50,16 @@ p {
 }
 
 a {
-  color: #111;
+  color: #007acc;
   text-decoration: none;
-  border-bottom: 1px solid #ccc;
-  transition: background-color 0.3s ease;
+  border-bottom: 1px solid #007acc;
+  transition: all 0.3s ease;
 }
 
 a:hover {
-  background-color: #f2f2f2;
+  background-color: #d0e7ff;
+  color: #004a99;
+  transform: scale(1.05);
 }
 
 ul {
@@ -57,6 +70,12 @@ ul {
 
 ul li {
   margin-bottom: 8px;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 768px) {
