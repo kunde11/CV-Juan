@@ -147,6 +147,7 @@ footer a:hover {
   }
 }
 
+/* Ajustes para móvil */
 @media (max-width: 768px) {
   .container {
     margin: 100px auto 40px;
@@ -160,15 +161,36 @@ footer a:hover {
 
   h2 {
     font-size: 1.4em;
+    margin-top: 3em;
+    margin-bottom: 1em;
+  }
+
+  h3 {
+    font-size: 1.1em;
+    margin-top: 2.2em;
   }
 
   .navbar ul {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  .navbar {
+    padding: 8px 0;
+  }
+
+  .navbar a {
+    font-size: 18px;
   }
 
   .tools i {
     font-size: 1.1em;
     padding: 6px;
+  }
+
+  /* Más espacio entre secciones */
+  section {
+    margin-bottom: 40px;
   }
 }
