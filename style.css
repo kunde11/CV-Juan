@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'EB Garamond', serif;
-  background-color: #f5f7fa;
+  background-color: #e3f2fd;
   color: #212121;
   line-height: 1.8;
   font-size: 18px;
@@ -12,64 +12,113 @@ body {
   animation: fadeIn 1s forwards;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #007acc;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #004a99;
+}
+
 .container {
-  max-width: 700px;
-  margin: 80px auto;
+  max-width: 800px;
+  margin: 120px auto 60px;
   padding: 0 20px;
 }
 
 h1 {
   font-size: 3em;
-  margin-bottom: 0.3em;
-  font-weight: normal;
   color: #111;
-}
-
-h1:hover {
-  color: #007acc;
-  letter-spacing: 3px;
+  margin-bottom: 0.3em;
   transition: all 0.3s ease;
 }
 
+h1:hover {
+  letter-spacing: 2px;
+  color: #007acc;
+}
+
 h2 {
-  margin-top: 2em;
-  font-size: 1.8em;
-  font-weight: normal;
+  font-size: 2em;
   color: #222;
+  margin-top: 2em;
 }
 
 h3 {
-  margin-top: 1.5em;
-  font-size: 1.3em;
-  font-weight: normal;
+  font-size: 1.4em;
   color: #333;
+  margin-top: 1.5em;
 }
 
-p {
+p, ul {
   margin-top: 0.5em;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 8px;
 }
 
 a {
   color: #007acc;
   text-decoration: none;
-  border-bottom: 1px solid #007acc;
+  border-bottom: 1px solid transparent;
   transition: all 0.3s ease;
 }
 
 a:hover {
+  border-color: #007acc;
   background-color: #d0e7ff;
   color: #004a99;
-  transform: scale(1.05);
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 0.5em;
+.tools {
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
-ul li {
-  margin-bottom: 8px;
+.tools i {
+  font-size: 1.4em;
+  margin-right: 10px;
+  color: #555;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #777;
+  background-color: #f0f0f0;
+  margin-top: 60px;
 }
 
 @keyframes fadeIn {
@@ -80,7 +129,7 @@ ul li {
 
 @media (max-width: 768px) {
   .container {
-    margin: 40px auto;
+    margin: 100px auto 40px;
     padding: 0 15px;
     font-size: 16px;
   }
@@ -91,5 +140,10 @@ ul li {
 
   h2 {
     font-size: 1.5em;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
   }
 }
