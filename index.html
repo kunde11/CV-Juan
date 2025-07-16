@@ -11,7 +11,10 @@
 <body>
   <header>
     <nav class="navbar">
-      <ul>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul id="menu" class="menu">
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#formacion">Formación</a></li>
         <li><a href="#experiencia">Experiencia</a></li>
@@ -76,7 +79,7 @@ constaba de la gestión general de la BBDD asi como también la integración con
 Administrar los cambios. Además como analista, me ha tocado desarrollar programas en asp y en 
 .net tanto como para uso interno de la empresa así como también para uso del cliente. Otra de 
 mis tareas era el mantenimiento y la publicación de las App desarrolladas, encargado de la 
-administración del IIS.  </p>
+administración del IIS</p>
       <div class="tools">
         <i class="fas fa-code" title=".NET"></i>
         <i class="fas fa-network-wired" title="IIS"></i>
@@ -117,6 +120,13 @@ administración del IIS.  </p>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
   </script>
 </body>
 </html>
