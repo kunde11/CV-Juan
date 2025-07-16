@@ -1,50 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Juan Andrés Osta</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-  <div class="container">
-    <h1>Juan Andrés Osta</h1>
-    <p>Mi perfil profesional está focalizado en el análisis, diseño, implementación y soporte de aplicaciones y base de datos. El hecho de haber transcurrido la totalidad de mi carrera profesional tanto en el rubro de Sistemas como en Marketing me permite desenvolverme en el ámbito técnico, así como en el funcional y también en el administrativo/gerencial.</p>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#formacion">Formación</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#idiomas">Idiomas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <h2>Formación Académica</h2>
-    <ul>
-      <li>Universidad ORT (Uruguay) – Programador Web (2015–2017)</li>
-      <li>Universidad ORT (Uruguay) – Analista Programador (2015–2017)</li>
-      <li>Universidad de la Empresa UDE (Uruguay) – Analista en Marketing (2016–2017)</li>
-    </ul>
+  <main class="container">
+    <section id="sobre-mi" data-aos="fade-up">
+      <h1>Juan Andrés Osta</h1>
+      <p>Mi perfil profesional está focalizado en el análisis, diseño, implementación y soporte de aplicaciones y base de datos. He trabajado tanto en el rubro de Sistemas como en Marketing, lo que me permite desenvolverme técnica, funcional y gerencialmente.</p>
+    </section>
 
-    <h2>Idiomas</h2>
-    <ul>
-      <li>Español – Nativo</li>
-      <li>Inglés – Avanzado (Oral, Escrito). Certificado First Certificate</li>
-      <li>Italiano – Básico</li>
-    </ul>
+    <section id="formacion" data-aos="fade-up">
+      <h2>Formación Académica</h2>
+      <ul>
+        <li>Programador Web - Universidad ORT (2015–2017)</li>
+        <li>Analista Programador - Universidad ORT (2015–2017)</li>
+        <li>Analista en Marketing - Universidad de la Empresa UDE (2016–2017)</li>
+      </ul>
+    </section>
 
-    <h2>Experiencia</h2>
-    <h3>DBA SQL Server | Caixabank / Logicalis (Barcelona)<br><small>Abril 2022 – Actualmente</small></h3>
-    <p>Responsable de la gestión y mantenimiento de una infraestructura de más de 300 servidores, tanto en entornos Windows como SQL Server. Encargado de tareas de mantenimiento (APARs), backups, montaje de Grupos de Disponibilidad (AG's), restauración de bases de datos y realización diaria del "morning check". Implementación de sistemas de control en Excel para parches y ventanas de mantenimiento. Trabajo colaborativo con el equipo técnico.</p>
+    <section id="experiencia" data-aos="fade-up">
+      <h2>Experiencia</h2>
 
-    <h3>Programador de Base de Datos y Analista | Dep Solutions (Madrid)<br><small>Junio 2020 – Marzo 2022</small></h3>
-    <p>DBA y desarrollador de consultas en SQL Server. Gestión de bases de datos, creación de nuevas BBDD, integración con apps, desarrollo en ASP y .NET, publicación y mantenimiento de apps, administración del IIS.</p>
+      <h3>DBA SQL Server | Caixabank / Logicalis (2022 - Actualidad)</h3>
+      <p>Actualmente en Caixabank estoy como responsable de la gestión y mantenimiento de una 
+infraestructura de más de 300 servidores, tanto en entornos Windows como SQL Server. 
+Encargado de la planificación y ejecución de tareas de mantenimiento (APARs), tanto automáticas 
+como manuales, según las ventanas de intervención definidas, así como de tareas relacionadas 
+con backups, gestión de incidencias diversas, montaje de Grupos de Disponibilidad (AG's) y 
+restauración de bases de datos (BBDD). 
+Durante mi tiempo en Caixabank, desde abril de 2022 hasta la fecha actual, desarrollé 
+habilidades en la administración y mantenimiento de servidores, especialmente en lo que respecta 
+a la gestión de parches y actualizaciones de SQL. Para mejorar la eficiencia en este proceso, 
+creé tablas en Excel que registraban los servidores y sus ventanas de parcheado según el cliente, 
+lo que facilitó el control y aseguró que los parcheados se realizaran dentro de la ventana 
+acordada. Otra de mis tareas era la realización diaria del "morning check", informe de control 
+basado en herramientas de monitorización para asegurar el funcionamiento correcto de todos los 
+sistemas críticos a primera hora de la mañana. 
+Además, durante mi trabajo en Caixabank, adquirí experiencia en la gestión de backups y en la 
+resolución de incidencias relacionadas con servidores y bases de datos. También participé 
+activamente en el montaje de Grupos de Disponibilidad (AG's) para garantizar la alta 
+disponibilidad y confiabilidad de las bases de datos. 
+El ambiente de trabajo en Caixabank fue profesional y colaborativo. Tuve la oportunidad de 
+trabajar en estrecha colaboración con un equipo dedicado, lo que fomentó el intercambio de 
+conocimientos y la resolución conjunta de problemas</p>
+      <div class="tools">
+        <i class="fas fa-database" title="SQL Server"></i>
+        <i class="fas fa-server" title="Windows Server"></i>
+        <i class="fas fa-terminal" title="PowerShell"></i>
+        <i class="fas fa-file-excel" title="Excel"></i>
+      </div>
 
-    <h3>Programador de Base de Datos y Análisis | Ministerio de Justicia (Madrid) / Everis<br><small>Octubre 2019 – Junio 2020</small></h3>
-    <p>Desarrollo en Oracle SQL Developer para corregir incidencias de aplicaciones internas y externas. Análisis de código y modelos de datos. Gestión de incidencias.</p>
+      <h3>Dep Solutions | Programador/DBA (2020 - 2022)</h3>
+      <p>DBA y Programador en Base de Datos con My SQL Server, Mi trabajo consta en desarrollar 
+consultas/Updates/Insert entre otras, de base de datos para corregir las incidencias y creación 
+de cero de nuevas BBDD para programas desarrollados recientemente, como DBA mi labor 
+constaba de la gestión general de la BBDD asi como también la integración con apps y  
+Administrar los cambios. Además como analista, me ha tocado desarrollar programas en asp y en 
+.net tanto como para uso interno de la empresa así como también para uso del cliente. Otra de 
+mis tareas era el mantenimiento y la publicación de las App desarrolladas, encargado de la 
+administración del IIS.  </p>
+      <div class="tools">
+        <i class="fas fa-code" title=".NET"></i>
+        <i class="fas fa-network-wired" title="IIS"></i>
+      </div>
 
-    <h3>Programador de Base de Datos y Análisis | AXA (Madrid) / Everis<br><small>Junio 2019 – Octubre 2019</small></h3>
-    <p>Consultas en SQL Server. Análisis para migración de plataforma interna a SisNet.</p>
+      <h3>Ministerio de Justicia (Everis) | Oracle Dev (2019 - 2020)</h3>
+      <p>Oracle SQL Developer, resolución de incidencias, análisis de modelos de datos.</p>
+      <div class="tools">
+        <i class="fas fa-database" title="Oracle SQL"></i>
+      </div>
 
-    <h2>Contacto</h2>
-    <p><a href="mailto:juan.osta@example.com">juan.osta@example.com</a></p>
-    <ul>
-      <li><a href="https://linkedin.com/in/juanandresosta" target="_blank">LinkedIn</a></li>
-      <li><a href="https://github.com/kunde11" target="_blank">GitHub</a></li>
-      <li><a href="CV-Juan-Andres-Osta.pdf" target="_blank">Descargar CV</a></li>
-    </ul>
-  </div>
+      <h3>AXA (Everis) | Programador SQL (2019)</h3>
+      <p>Consultas en SQL Server y análisis para migración a SisNet.</p>
+    </section>
+
+    <section id="idiomas" data-aos="fade-up">
+      <h2>Idiomas</h2>
+      <ul>
+        <li>Español - Nativo</li>
+        <li>Inglés - Avanzado (First Certificate)</li>
+        <li>Italiano - Básico</li>
+      </ul>
+    </section>
+
+    <section id="contacto" data-aos="fade-up">
+      <h2>Contacto</h2>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:andresosta@hotmail.com">andresosta@hotmail.com</a></p>
+      <p>
+        <a href="https://www.linkedin.com/in/juan-andres-osta-0a2b64140/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </p>
+    </section>
+  </main>
+
+  <footer data-aos="fade-up">
+    <p>&copy; 2025 Juan Andrés Osta. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+  </script>
 </body>
 </html>
