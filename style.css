@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #e6f0fa;
+  background-color: #e6f0fa; /* azul pastel */
   color: #333;
 }
 
@@ -12,26 +12,34 @@ body {
   padding: 1rem 0;
 }
 
+/* Header con flex para nombre, foto y nav */
 header {
   background-color: #ffffff;
   border-bottom: 2px solid #cce0ff;
   position: sticky;
   top: 0;
   z-index: 1000;
+  padding: 0.5rem 0;
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
 }
 
 header h1 {
   margin: 0;
-  padding: 1rem 0;
   font-size: 1.8rem;
   color: #004080;
   animation: fadeInDown 1s ease-in-out;
+  flex-shrink: 0;
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
 }
 
 .menu {
@@ -39,6 +47,7 @@ nav {
   padding-left: 0;
   display: flex;
   gap: 1rem;
+  margin: 0;
 }
 
 .menu li a {
@@ -60,6 +69,23 @@ nav {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: #004080;
+}
+
+/* Foto derecha estilo */
+.foto-derecha img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid #bcdffb;
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-derecha img:hover {
+  transform: scale(1.05);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 main h2 {
@@ -85,42 +111,7 @@ i.fas, i.fab {
   color: #004080;
 }
 
-@media screen and (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    background-color: #ffffff;
-    position: absolute;
-    top: 70px;
-    right: 10px;
-    border: 1px solid #cce0ff;
-    padding: 1rem;
-  }
-
-  .menu li {
-    margin: 0.5rem 0;
-  }
-
-  #menu-toggle:checked + label + .menu {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
-
-@keyframes fadeInUp {
-  0% { transform: translateY(20px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes fadeInDown {
-  0% { transform: translateY(-20px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-/* Iconos herramientas: transición + rotación y brillo en hover */
+/* Iconos herramientas con colores originales, tamaño y hover */
 .iconos-herramientas {
   display: flex;
   flex-wrap: wrap;
@@ -132,40 +123,62 @@ i.fas, i.fab {
 .iconos-herramientas img {
   width: 60px;
   height: auto;
-  transition: transform 0.4s ease, filter 0.4s ease;
+  transition: transform 0.3s ease;
+  filter: none; /* permite mantener colores originales */
 }
 
 .iconos-herramientas img:hover {
-  transform: rotate(10deg) scale(1.1);
-  filter: drop-shadow(0 0 6px #007bff);
+  transform: scale(1.1);
 }
 
-/* Foto derecha */
-.foto-derecha {
-  position: absolute;
-  top: 100px;
-  right: 30px;
-  z-index: 10;
-}
-
-.foto-derecha img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border: 3px solid #bcdffb;
-  border-radius: 12px;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.foto-derecha img:hover {
-  transform: scale(1.05);
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Ocultar foto derecha en móviles */
-@media (max-width: 768px) {
-  .foto-derecha {
+/* Media queries para móvil */
+@media screen and (max-width: 768px) {
+  .menu {
     display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    border: 1px solid #cce0ff;
+    padding: 1rem;
+    z-index: 1100;
   }
+
+  #menu-toggle:checked + label + .menu {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Ajuste flex header para móvil */
+  .header-flex {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .foto-derecha {
+    order: 3; /* para que quede debajo del nombre y menú */
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .foto-derecha img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Animaciones fadeIn */
+@keyframes fadeInUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  0% { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
