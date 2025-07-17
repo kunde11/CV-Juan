@@ -198,3 +198,64 @@ a.boton-pdf:hover {
   background-color: #c9302c;
 }
 
+.selector-idioma {
+  margin-left: 1rem;
+  color: #004080;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+#idioma-select {
+  padding: 0.2rem 0.5rem;
+  font-weight: normal;
+  border-radius: 4px;
+  border: 1px solid #004080;
+}
+
+.form-contacto {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  gap: 0.7rem;
+}
+
+.form-contacto label {
+  font-weight: bold;
+  color: #004080;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  padding: 0.5rem;
+  border: 1px solid #cce0ff;
+  border-radius: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.form-contacto button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-contacto button:hover {
+  background-color: #0056b3;
+}
+
