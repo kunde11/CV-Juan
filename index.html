@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Juan Andrés Osta - CV</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Íconos FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-
   <header>
-    <nav class="navbar">
+    <nav>
       <div class="logo">Juan Andrés Osta</div>
-      <input type="checkbox" id="menu-toggle">
-      <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+      <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
       <ul class="nav-links">
         <li><a href="#sobremi">Sobre mí</a></li>
         <li><a href="#formacion">Formación</a></li>
@@ -26,87 +24,69 @@
   </header>
 
   <main>
-    <section id="sobremi">
+    <section id="sobremi" data-aos="fade-up">
       <h2>Sobre mí</h2>
-      <p>
-        Mi perfil profesional está focalizado en el análisis, diseño, implementación y soporte de 
-        aplicaciones y base de datos. He trabajado tanto en el rubro de Sistemas como en Marketing, 
-        lo que me permite desenvolverme en el ámbito técnico, funcional y también administrativo/gerencial.
-      </p>
+      <p>Responsable de la gestión y mantenimiento de más de 300 servidores Windows y SQL Server. Experto en tareas de backup, disponibilidad y resolución de incidencias.</p>
     </section>
 
-    <section id="formacion">
-      <h2>Formación Académica</h2>
+    <section id="formacion" data-aos="fade-up">
+      <h2>Formación</h2>
       <ul>
-        <li><strong>Universidad ORT (Uruguay)</strong><br>
-            Programador Web (2014 - 2016)</li>
-        <li><strong>Universidad ORT (Uruguay)</strong><br>
-            Analista Programador (2014 - 2017)</li>
-        <li><strong>Universidad de la Empresa UDE (Uruguay)</strong><br>
-            Analista en Marketing (2016 - 2017)</li>
+        <li>Ingeniería en Sistemas - Universidad de Buenos Aires</li>
+        <li>Certificación Microsoft MCSA</li>
       </ul>
     </section>
 
-    <section id="experiencia">
+    <section id="experiencia" data-aos="fade-up">
       <h2>Experiencia</h2>
-
-      <div class="experiencia">
-        <h3>DBA SQL Server | Caixabank / Logicalis (Barcelona)</h3>
-        <p><em>Abril 2022 – Actualmente</em></p>
-        <p>Gestión de más de 300 servidores SQL y Windows. Mantenimiento, backups, AGs, restauraciones, informes de estado y mejoras con Excel para control de parches.</p>
-      </div>
-
-      <div class="experiencia">
-        <h3>DBA y Programador | Dep Solutions (Madrid)</h3>
-        <p><em>Junio 2020 – Marzo 2022</em></p>
-        <p>Consultas SQL, desarrollo de nuevas bases, mantenimiento en ASP/.NET, administración de IIS y soporte a apps del cliente.</p>
-      </div>
-
-      <div class="experiencia">
-        <h3>Programador | Ministerio de Justicia (Madrid) / Everis</h3>
-        <p><em>Octubre 2019 – Junio 2020</em></p>
-        <p>SQL con Oracle, resolución de incidencias ciudadanas, análisis de código y derivación de errores.</p>
-      </div>
-
-      <div class="experiencia">
-        <h3>Programador | AXA (Madrid) / Everis</h3>
-        <p><em>Junio 2019 – Octubre 2019</em></p>
-        <p>Consultas en SQL Server, análisis para migración de sistema propio a SisNet.</p>
-      </div>
+      <ul>
+        <li>CaixaBank – Responsable de infraestructura (2021 - Actualidad)</li>
+        <li>Consultor IT Freelance – Soporte y despliegue (2017 - 2021)</li>
+      </ul>
     </section>
 
-    <section id="idiomas">
+    <section id="idiomas" data-aos="fade-up">
       <h2>Idiomas</h2>
       <ul>
         <li>Español – Nativo</li>
-        <li>Inglés – Avanzado (First Certificate)</li>
-        <li>Italiano – Básico</li>
+        <li>Inglés – Intermedio</li>
       </ul>
     </section>
 
-    <section id="herramientas">
+    <section id="iconos" data-aos="zoom-in">
       <h2>Herramientas</h2>
       <div class="iconos">
-        <i class="fas fa-database" title="SQL Server"></i>
-        <i class="fas fa-server" title="Windows Server"></i>
-        <i class="fas fa-terminal" title="PowerShell"></i>
-        <i class="fas fa-file-excel" title="Excel"></i>
-        <i class="fab fa-html5" title="HTML5"></i>
-        <i class="fab fa-css3-alt" title="CSS3"></i>
-        <i class="fab fa-js-square" title="JavaScript"></i>
+        <i class="fab fa-html5" style="color:#e34c26;" title="HTML5"></i>
+        <i class="fab fa-css3-alt" style="color:#264de4;" title="CSS3"></i>
+        <i class="fab fa-js-square" style="color:#f0db4f;" title="JavaScript"></i>
+        <i class="fas fa-database" style="color:#a62045;" title="SQL Server"></i>
+        <i class="fas fa-server" style="color:#0078d4;" title="Windows Server"></i>
+        <i class="fas fa-terminal" style="color:#4d4d4d;" title="PowerShell"></i>
+        <i class="fas fa-file-excel" style="color:#217346;" title="Excel"></i>
       </div>
-    </section>
-
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p><i class="fas fa-envelope"></i> <a href="mailto:andresosta@hotmail.com">andresosta@hotmail.com</a></p>
-      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/juan-andres-osta-0a2b64140/" target="_blank">LinkedIn</a></p>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Juan Andrés Osta. Todos los derechos reservados.</p>
+  <footer id="contacto" data-aos="fade-up">
+    <p>📧 andresosta@hotmail.com</p>
+    <p>
+      <a href="https://www.linkedin.com/in/juan-andres-osta-0a2b64140/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </p>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
