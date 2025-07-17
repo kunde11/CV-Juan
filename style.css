@@ -176,12 +176,30 @@ i.fas, i.fab {
   box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Ocultar en móviles */
+/*
 @media (max-width: 768px) {
   .foto-derecha {
     display: none;
   }
 }
+*/
 
+
+
+@media (max-width: 768px) {
+  .foto-derecha {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .foto-derecha img {
+    width: 80px;
+    height: 80px;
+  }
+}
 
 
