@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #e6f0fa;
+  background-color: #e6f0fa; /* azul pastel */
   color: #333;
 }
 
@@ -12,49 +12,34 @@ body {
   padding: 1rem 0;
 }
 
+/* Header con flex para nombre, foto y nav */
 header {
   background-color: #ffffff;
   border-bottom: 2px solid #cce0ff;
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 0;
 }
 
-.titulo-con-foto {
+.header-flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
   gap: 1rem;
-  margin-top: 1rem;
+  position: relative;
 }
 
-.titulo-con-foto h1 {
+header h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #004080;
   animation: fadeInDown 1s ease-in-out;
-}
-
-.foto-derecha img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border: 3px solid #004080;
-  border-radius: 10px;
-  box-shadow: 3px 3px 6px rgba(0, 64, 128, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.foto-derecha img:hover {
-  transform: scale(1.05);
-  box-shadow: 5px 5px 10px rgba(0, 64, 128, 0.5);
+  flex-shrink: 0;
 }
 
 nav {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  position: relative;
 }
 
 .menu {
@@ -62,6 +47,7 @@ nav {
   padding-left: 0;
   display: flex;
   gap: 1rem;
+  margin: 0;
 }
 
 .menu li a {
@@ -86,12 +72,27 @@ nav {
   color: #004080;
 }
 
+/* Foto derecha estilo */
+.foto-derecha img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid #bcdffb;
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-derecha img:hover {
+  transform: scale(1.05);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 main h2 {
   color: #004080;
   border-bottom: 1px solid #cce0ff;
   padding-bottom: 0.3rem;
   margin-top: 2rem;
-  animation: fadeInUp 1s ease-in-out;
 }
 
 section {
@@ -103,7 +104,6 @@ footer {
   padding: 1rem;
   background-color: #cce0ff;
   margin-top: 2rem;
-  color: #004080;
 }
 
 i.fas, i.fab {
@@ -111,6 +111,7 @@ i.fas, i.fab {
   color: #004080;
 }
 
+/* Iconos herramientas con colores originales, tamaño y hover */
 .iconos-herramientas {
   display: flex;
   flex-wrap: wrap;
@@ -123,15 +124,14 @@ i.fas, i.fab {
   width: 60px;
   height: auto;
   transition: transform 0.3s ease;
-  filter: drop-shadow(0 0 1px rgba(0,0,0,0.1));
+  filter: none; /* permite mantener colores originales */
 }
 
 .iconos-herramientas img:hover {
   transform: scale(1.1);
 }
 
-/* Responsive menu */
-
+/* Media queries para móvil */
 @media screen and (max-width: 768px) {
   .menu {
     display: none;
@@ -142,10 +142,7 @@ i.fas, i.fab {
     right: 10px;
     border: 1px solid #cce0ff;
     padding: 1rem;
-  }
-
-  .menu li {
-    margin: 0.5rem 0;
+    z-index: 1100;
   }
 
   #menu-toggle:checked + label + .menu {
@@ -156,15 +153,26 @@ i.fas, i.fab {
     display: block;
   }
 
-  /* Ajuste foto derecha en móvil */
+  /* Ajuste flex header para móvil */
+  .header-flex {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .foto-derecha {
+    order: 3; /* para que quede debajo del nombre y menú */
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
   .foto-derecha img {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
   }
 }
 
-/* Animaciones */
-
+/* Animaciones fadeIn */
 @keyframes fadeInUp {
   0% { transform: translateY(20px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
