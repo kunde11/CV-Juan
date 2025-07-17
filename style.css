@@ -198,3 +198,18 @@ a.boton-pdf:hover {
   background-color: #c9302c;
 }
 
+.selector-idioma {
+  margin-left: 1rem;
+  color: #004080;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+#idioma-select {
+  padding: 0.2rem 0.5rem;
+  font-weight: normal;
+  border-radius: 4px;
+  border: 1px solid #004080;
+}
