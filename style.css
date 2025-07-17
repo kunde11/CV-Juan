@@ -138,3 +138,27 @@ i.fas, i.fab {
   transform: scale(1.1);
 }
 
+.sidebar-foto {
+  position: fixed;
+  top: 120px; /* Ajustar según altura del menú */
+  left: 20px;
+  z-index: 5;
+}
+
+.sidebar-foto img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #bcdffb;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+/* Ocultar en móviles */
+@media (max-width: 768px) {
+  .sidebar-foto {
+    display: none;
+  }
+}
+
+
