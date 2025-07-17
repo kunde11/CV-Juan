@@ -161,4 +161,33 @@ i.fas, i.fab {
   }
 }
 
+.foto-derecha {
+  position: absolute;
+  top: 100px;
+  right: 30px;
+  z-index: 10;
+}
+
+.foto-derecha img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid #bcdffb;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px; /* marco cuadrado con esquinas suaves */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-derecha img:hover {
+  transform: scale(1.05);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Ocultar en móviles */
+@media (max-width: 768px) {
+  .foto-derecha {
+    display: none;
+  }
+}
+
 
