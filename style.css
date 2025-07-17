@@ -259,3 +259,12 @@ a.boton-pdf:hover {
   background-color: #0056b3;
 }
 
+#pregunta {
+  background-color: #f5faff;
+  padding: 2rem 1rem;
+  border-top: 1px solid #cce0ff;
+  border-bottom: 1px solid #cce0ff;
+  margin-top: 2rem;
+  border-radius: 12px;
+}
+
