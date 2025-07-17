@@ -1,117 +1,94 @@
-/* General */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  background-color: #e6f0fa; /* Pastel azul claro */
-  color: #333;
-  line-height: 1.6;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juan Andrés Osta - CV</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a2e0e6fa5f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Juan Andrés Osta</div>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#formacion">Formación</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#idiomas">Idiomas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-h2 {
-  color: #003366;
-  margin-bottom: 10px;
-}
+  <section id="sobre-mi" class="section">
+    <h2>Sobre mí</h2>
+    <p>Mi perfil profesional está focalizado en el análisis, diseño, implementación y soporte de aplicaciones y base de datos. El hecho de haber transcurrido la totalidad de mi carrera profesional tanto en el rubro de Sistemas como en Marketing me permite desenvolverme en el ámbito técnico, así como en el funcional y también en el administrativo/gerencial.</p>
+  </section>
 
-ul {
-  list-style: none;
-  padding: 0;
-}
+  <section id="formacion" class="section">
+    <h2>Formación Académica</h2>
+    <ul>
+      <li><strong>Universidad ORT (Uruguay)</strong><br>Programador Web / Analista Programador<br>2015 - 2017</li>
+      <li><strong>Universidad de la Empresa UDE (Uruguay)</strong><br>Analista en Marketing<br>2016 - 2017</li>
+    </ul>
+  </section>
 
-/* Header y navegación */
-header {
-  background-color: #003366;
-  color: white;
-  padding: 10px 20px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 10;
-}
+  <section id="experiencia" class="section">
+    <h2>Experiencia</h2>
+    <div class="job">
+      <h3>DBA SQL Server | Caixabank / Logicalis (Barcelona)</h3>
+      <p>Abril 2022 – Actualmente</p>
+      <p>Responsable de más de 300 servidores Windows y SQL Server, mantenimiento (APARs), backups, montaje de Grupos de Disponibilidad (AG's), y restauración de BBDD. Mejoras de eficiencia con Excel para control de ventanas de parcheo. Realización diaria de "morning check". Trabajo en equipo colaborativo.</p>
+    </div>
+    <div class="job">
+      <h3>Programador de Base de Datos y Analista | Dep Solutions (Madrid)</h3>
+      <p>Junio 2020 – Marzo 2022</p>
+      <p>DBA y desarrollo SQL Server, ASP.NET, gestión de IIS, mantenimiento y publicación de apps. Integración de BBDD con aplicaciones y resolución de incidencias.</p>
+    </div>
+    <div class="job">
+      <h3>Programador de Base de Datos y Análisis | Ministerio de Justicia (Madrid) / Everis</h3>
+      <p>Octubre 2019 – Junio 2020</p>
+      <p>Consultas SQL con Oracle SQL Developer, resolución de incidencias de ciudadanos y análisis de modelos de datos.</p>
+    </div>
+    <div class="job">
+      <h3>Programador de Base de Datos y Análisis | AXA (Madrid) / Everis</h3>
+      <p>Junio 2019 – Octubre 2019</p>
+      <p>Consultas con SQL Server Management Studio, análisis para migración a SisNet.</p>
+    </div>
+  </section>
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
+  <section id="idiomas" class="section">
+    <h2>Idiomas</h2>
+    <ul>
+      <li>Español - Nativo</li>
+      <li>Inglés - Avanzado (Oral y escrito) - Certificado First Certificate</li>
+      <li>Italiano - Básico</li>
+    </ul>
+  </section>
 
-.logo {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
+  <section id="contacto" class="section">
+    <h2>Contacto</h2>
+    <div class="contact-icons">
+      <a href="mailto:andresosta@hotmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/juan-andres-osta-0a2b64140/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </section>
 
-.nav-links {
-  display: flex;
-  gap: 15px;
-}
+  <footer>
+    <p>&copy; 2025 Juan Andrés Osta</p>
+  </footer>
 
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav-links');
 
-.nav-links li a:hover {
-  text-decoration: underline;
-}
-
-/* Menú hamburguesa móvil */
-.menu-toggle {
-  display: none;
-  cursor: pointer;
-}
-
-.menu-toggle i {
-  font-size: 1.5rem;
-  color: white;
-}
-
-/* Secciones */
-main {
-  padding: 100px 20px 40px 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-section {
-  margin-bottom: 60px;
-}
-
-.iconos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  font-size: 2rem;
-}
-
-/* Footer */
-footer {
-  background-color: #003366;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-footer a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #003366;
-    padding: 10px 0;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

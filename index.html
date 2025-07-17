@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juan Andrés Osta - CV</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://kit.fontawesome.com/a2e0e6fa5f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header class="navbar">
-    <h1>Juan Andrés Osta</h1>
-    <nav>
-      <input type="checkbox" id="menu-toggle">
-      <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
-      <ul class="menu">
+  <header>
+    <nav class="navbar">
+      <div class="logo">Juan Andrés Osta</div>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#formacion">Formación</a></li>
         <li><a href="#experiencia">Experiencia</a></li>
@@ -23,73 +24,71 @@
     </nav>
   </header>
 
-  <main>
-    <section id="sobre-mi">
-      <h2>Sobre mí</h2>
-      <p>Mi perfil profesional está focalizado en el análisis, diseño, implementación y soporte de aplicaciones y bases de datos. Mi experiencia abarca tanto el ámbito técnico como el funcional y administrativo/gerencial, con base en los sectores de Sistemas y Marketing.</p>
-    </section>
+  <section id="sobre-mi" class="section">
+    <h2>Sobre mí</h2>
+    <p>Mi perfil profesional está focalizado en el análisis, diseño, implementación y soporte de aplicaciones y base de datos. El hecho de haber transcurrido la totalidad de mi carrera profesional tanto en el rubro de Sistemas como en Marketing me permite desenvolverme en el ámbito técnico, así como en el funcional y también en el administrativo/gerencial.</p>
+  </section>
 
-    <section id="formacion">
-      <h2>Formación Académica</h2>
-      <ul>
-        <li><strong>Universidad ORT (Uruguay)</strong> – Programador Web (2015 - 2017)</li>
-        <li><strong>Universidad ORT (Uruguay)</strong> – Analista Programador (2015 - 2017)</li>
-        <li><strong>Universidad de la Empresa UDE (Uruguay)</strong> – Analista en Marketing (2016 - 2017)</li>
-      </ul>
-    </section>
+  <section id="formacion" class="section">
+    <h2>Formación Académica</h2>
+    <ul>
+      <li><strong>Universidad ORT (Uruguay)</strong><br>Programador Web / Analista Programador<br>2015 - 2017</li>
+      <li><strong>Universidad de la Empresa UDE (Uruguay)</strong><br>Analista en Marketing<br>2016 - 2017</li>
+    </ul>
+  </section>
 
-    <section id="experiencia">
-      <h2>Experiencia</h2>
-      <div class="job">
-        <h3>DBA SQL Server | Caixabank / Logicalis (Barcelona)</h3>
-        <p>Abril 2022 – Actualmente</p>
-        <p>Responsable de una infraestructura de más de 300 servidores (Windows y SQL Server), mantenimiento (APARs), backups, AGs, restauraciones. Automatización con Excel, creación de herramientas de control para parcheado, ejecución de "morning checks", y resolución de incidencias.</p>
-      </div>
-      <div class="job">
-        <h3>Programador de Base de Datos y Analista | Dep Solutions (Madrid)</h3>
-        <p>Junio 2020 – Marzo 2022</p>
-        <p>DBA en MySQL y SQL Server. Desarrollo de consultas SQL, integración con apps, mantenimiento de BBDD, programación en ASP y .NET, y administración de IIS.</p>
-      </div>
-      <div class="job">
-        <h3>Programador de BBDD | Ministerio de Justicia / Everis (Madrid)</h3>
-        <p>Octubre 2019 – Junio 2020</p>
-        <p>Oracle SQL Developer. Resolución de incidencias de aplicaciones ciudadanas e internas, análisis de datos y soporte funcional/técnico.</p>
-      </div>
-      <div class="job">
-        <h3>Programador de BBDD | AXA / Everis (Madrid)</h3>
-        <p>Junio 2019 – Octubre 2019</p>
-        <p>SQL Server Management Studio. Análisis y migración de sistemas internos hacia SisNet, resolución de incidencias y tareas de soporte.</p>
-      </div>
-    </section>
+  <section id="experiencia" class="section">
+    <h2>Experiencia</h2>
+    <div class="job">
+      <h3>DBA SQL Server | Caixabank / Logicalis (Barcelona)</h3>
+      <p>Abril 2022 – Actualmente</p>
+      <p>Responsable de más de 300 servidores Windows y SQL Server, mantenimiento (APARs), backups, montaje de Grupos de Disponibilidad (AG's), y restauración de BBDD. Mejoras de eficiencia con Excel para control de ventanas de parcheo. Realización diaria de "morning check". Trabajo en equipo colaborativo.</p>
+    </div>
+    <div class="job">
+      <h3>Programador de Base de Datos y Analista | Dep Solutions (Madrid)</h3>
+      <p>Junio 2020 – Marzo 2022</p>
+      <p>DBA y desarrollo SQL Server, ASP.NET, gestión de IIS, mantenimiento y publicación de apps. Integración de BBDD con aplicaciones y resolución de incidencias.</p>
+    </div>
+    <div class="job">
+      <h3>Programador de Base de Datos y Análisis | Ministerio de Justicia (Madrid) / Everis</h3>
+      <p>Octubre 2019 – Junio 2020</p>
+      <p>Consultas SQL con Oracle SQL Developer, resolución de incidencias de ciudadanos y análisis de modelos de datos.</p>
+    </div>
+    <div class="job">
+      <h3>Programador de Base de Datos y Análisis | AXA (Madrid) / Everis</h3>
+      <p>Junio 2019 – Octubre 2019</p>
+      <p>Consultas con SQL Server Management Studio, análisis para migración a SisNet.</p>
+    </div>
+  </section>
 
-    <section id="idiomas">
-      <h2>Idiomas</h2>
-      <ul>
-        <li><strong>Español:</strong> Nativo</li>
-        <li><strong>Inglés:</strong> Avanzado (Oral y Escrito) – Certificado First Certificate</li>
-        <li><strong>Italiano:</strong> Básico</li>
-      </ul>
-    </section>
+  <section id="idiomas" class="section">
+    <h2>Idiomas</h2>
+    <ul>
+      <li>Español - Nativo</li>
+      <li>Inglés - Avanzado (Oral y escrito) - Certificado First Certificate</li>
+      <li>Italiano - Básico</li>
+    </ul>
+  </section>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p><i class="fas fa-envelope"></i> andresosta@hotmail.com</p>
-      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/juan-andres-osta-0a2b64140/" target="_blank">LinkedIn</a></p>
-    </section>
-
-    <section id="herramientas">
-      <h2>Herramientas</h2>
-      <div class="tools">
-        <i class="fas fa-database" title="SQL Server" style="color:#b7472a;"></i>
-        <i class="fas fa-server" title="Windows Server" style="color:#2d71c7;"></i>
-        <i class="fas fa-terminal" title="PowerShell" style="color:#4b8bbe;"></i>
-        <i class="fas fa-file-excel" title="Excel" style="color:#217346;"></i>
-      </div>
-    </section>
-  </main>
+  <section id="contacto" class="section">
+    <h2>Contacto</h2>
+    <div class="contact-icons">
+      <a href="mailto:andresosta@hotmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/juan-andres-osta-0a2b64140/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </section>
 
   <footer>
     <p>&copy; 2025 Juan Andrés Osta</p>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
