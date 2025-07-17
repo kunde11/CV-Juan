@@ -2,19 +2,19 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juan Andrés Osta - CV</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-  <header>
+  <header class="navbar">
+    <h1>Juan Andrés Osta</h1>
     <nav>
-      <div class="logo">Juan Andrés Osta</div>
-      <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
-      <ul class="nav-links">
-        <li><a href="#sobremi">Sobre mí</a></li>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
+      <ul class="menu">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#formacion">Formación</a></li>
         <li><a href="#experiencia">Experiencia</a></li>
         <li><a href="#idiomas">Idiomas</a></li>
@@ -24,69 +24,72 @@
   </header>
 
   <main>
-    <section id="sobremi" data-aos="fade-up">
+    <section id="sobre-mi">
       <h2>Sobre mí</h2>
-      <p>Responsable de la gestión y mantenimiento de más de 300 servidores Windows y SQL Server. Experto en tareas de backup, disponibilidad y resolución de incidencias.</p>
+      <p>Mi perfil profesional está focalizado en el análisis, diseño, implementación y soporte de aplicaciones y bases de datos. Mi experiencia abarca tanto el ámbito técnico como el funcional y administrativo/gerencial, con base en los sectores de Sistemas y Marketing.</p>
     </section>
 
-    <section id="formacion" data-aos="fade-up">
-      <h2>Formación</h2>
+    <section id="formacion">
+      <h2>Formación Académica</h2>
       <ul>
-        <li>Ingeniería en Sistemas - Universidad de Buenos Aires</li>
-        <li>Certificación Microsoft MCSA</li>
+        <li><strong>Universidad ORT (Uruguay)</strong> – Programador Web (2015 - 2017)</li>
+        <li><strong>Universidad ORT (Uruguay)</strong> – Analista Programador (2015 - 2017)</li>
+        <li><strong>Universidad de la Empresa UDE (Uruguay)</strong> – Analista en Marketing (2016 - 2017)</li>
       </ul>
     </section>
 
-    <section id="experiencia" data-aos="fade-up">
+    <section id="experiencia">
       <h2>Experiencia</h2>
-      <ul>
-        <li>CaixaBank – Responsable de infraestructura (2021 - Actualidad)</li>
-        <li>Consultor IT Freelance – Soporte y despliegue (2017 - 2021)</li>
-      </ul>
+      <div class="job">
+        <h3>DBA SQL Server | Caixabank / Logicalis (Barcelona)</h3>
+        <p>Abril 2022 – Actualmente</p>
+        <p>Responsable de una infraestructura de más de 300 servidores (Windows y SQL Server), mantenimiento (APARs), backups, AGs, restauraciones. Automatización con Excel, creación de herramientas de control para parcheado, ejecución de "morning checks", y resolución de incidencias.</p>
+      </div>
+      <div class="job">
+        <h3>Programador de Base de Datos y Analista | Dep Solutions (Madrid)</h3>
+        <p>Junio 2020 – Marzo 2022</p>
+        <p>DBA en MySQL y SQL Server. Desarrollo de consultas SQL, integración con apps, mantenimiento de BBDD, programación en ASP y .NET, y administración de IIS.</p>
+      </div>
+      <div class="job">
+        <h3>Programador de BBDD | Ministerio de Justicia / Everis (Madrid)</h3>
+        <p>Octubre 2019 – Junio 2020</p>
+        <p>Oracle SQL Developer. Resolución de incidencias de aplicaciones ciudadanas e internas, análisis de datos y soporte funcional/técnico.</p>
+      </div>
+      <div class="job">
+        <h3>Programador de BBDD | AXA / Everis (Madrid)</h3>
+        <p>Junio 2019 – Octubre 2019</p>
+        <p>SQL Server Management Studio. Análisis y migración de sistemas internos hacia SisNet, resolución de incidencias y tareas de soporte.</p>
+      </div>
     </section>
 
-    <section id="idiomas" data-aos="fade-up">
+    <section id="idiomas">
       <h2>Idiomas</h2>
       <ul>
-        <li>Español – Nativo</li>
-        <li>Inglés – Intermedio</li>
+        <li><strong>Español:</strong> Nativo</li>
+        <li><strong>Inglés:</strong> Avanzado (Oral y Escrito) – Certificado First Certificate</li>
+        <li><strong>Italiano:</strong> Básico</li>
       </ul>
     </section>
 
-    <section id="iconos" data-aos="zoom-in">
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p><i class="fas fa-envelope"></i> andresosta@hotmail.com</p>
+      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/juan-andres-osta-0a2b64140/" target="_blank">LinkedIn</a></p>
+    </section>
+
+    <section id="herramientas">
       <h2>Herramientas</h2>
-      <div class="iconos">
-        <i class="fab fa-html5" style="color:#e34c26;" title="HTML5"></i>
-        <i class="fab fa-css3-alt" style="color:#264de4;" title="CSS3"></i>
-        <i class="fab fa-js-square" style="color:#f0db4f;" title="JavaScript"></i>
-        <i class="fas fa-database" style="color:#a62045;" title="SQL Server"></i>
-        <i class="fas fa-server" style="color:#0078d4;" title="Windows Server"></i>
-        <i class="fas fa-terminal" style="color:#4d4d4d;" title="PowerShell"></i>
-        <i class="fas fa-file-excel" style="color:#217346;" title="Excel"></i>
+      <div class="tools">
+        <i class="fas fa-database" title="SQL Server" style="color:#b7472a;"></i>
+        <i class="fas fa-server" title="Windows Server" style="color:#2d71c7;"></i>
+        <i class="fas fa-terminal" title="PowerShell" style="color:#4b8bbe;"></i>
+        <i class="fas fa-file-excel" title="Excel" style="color:#217346;"></i>
       </div>
     </section>
   </main>
 
-  <footer id="contacto" data-aos="fade-up">
-    <p>📧 andresosta@hotmail.com</p>
-    <p>
-      <a href="https://www.linkedin.com/in/juan-andres-osta-0a2b64140/" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-    </p>
+  <footer>
+    <p>&copy; 2025 Juan Andrés Osta</p>
   </footer>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-    document.addEventListener('DOMContentLoaded', () => {
-      const menuToggle = document.getElementById('menu-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-      });
-    });
-  </script>
 </body>
 </html>
