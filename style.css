@@ -236,5 +236,12 @@ i.fas, i.fab {
   }
 }
 
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem 0;
+}
+
 
 
