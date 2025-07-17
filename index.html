@@ -9,25 +9,24 @@
 </head>
 <body>
   <header>
-    <div class="container">
-      <div class="titulo-con-foto">
+    <div class="container header-flex">
+      <div class="titulo-nav">
         <h1>Juan Andrés Osta</h1>
-        <div class="foto-derecha">
-          <img src="assets/foto.jpg" alt="Foto de Juan Andrés Osta" />
-        </div>
+        <nav>
+          <input type="checkbox" id="menu-toggle">
+          <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
+          <ul class="menu">
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#formacion">Formación</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#idiomas">Idiomas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
       </div>
-
-      <nav>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
-        <ul class="menu">
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#formacion">Formación</a></li>
-          <li><a href="#experiencia">Experiencia</a></li>
-          <li><a href="#idiomas">Idiomas</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
+      <div class="foto-derecha">
+        <img src="assets/foto.jpg" alt="Foto de Juan Andrés Osta" />
+      </div>
     </div>
   </header>
 
@@ -48,7 +47,6 @@
 
     <section id="experiencia">
       <h2>Experiencia</h2>
-
       <article>
         <h3>DBA SQL Server | Caixabank / Logicalis (Barcelona)</h3>
         <p><strong>Abril 2022 – Actualmente</strong></p>
@@ -75,19 +73,19 @@
     </section>
 
     <section id="herramientas">
-       <h2>Herramientas</h2>
-        <div class="iconos-herramientas">
-    	<img src="assets/sqlserver.png" alt="SQL Server" />
-    	<img src="assets/windows.png" alt="Windows Server" />
-	    <img src="assets/linux.png" alt="Linux" />
-    	<img src="assets/powershell.png" alt="PowerShell" />
-    	<img src="assets/excel.png" alt="Excel" />
-    	<img src="assets/postgresql.png" alt="PostgreSQL" />
-    	<img src="assets/mongodb.png" alt="MongoDB" />
-    	<img src="assets/html5.png" alt="HTML5" />
-    	<img src="assets/javascript.png" alt="JavaScript" />
-    	<img src="assets/visualestudio.png" alt="VisualStudio" />
-  	  </div>
+      <h2>Herramientas</h2>
+      <div class="iconos-herramientas">
+        <img src="assets/sqlserver.png" alt="SQL Server" />
+        <img src="assets/windows.png" alt="Windows Server" />
+        <img src="assets/linux.png" alt="Linux" />
+        <img src="assets/powershell.png" alt="PowerShell" />
+        <img src="assets/excel.png" alt="Excel" />
+        <img src="assets/postgresql.png" alt="PostgreSQL" />
+        <img src="assets/mongodb.png" alt="MongoDB" />
+        <img src="assets/html5.png" alt="HTML5" />
+        <img src="assets/javascript.png" alt="JavaScript" />
+        <img src="assets/visualestudio.png" alt="VisualStudio" />
+      </div>
     </section>
 
     <section id="idiomas">
@@ -103,6 +101,7 @@
       <h2>Contacto</h2>
       <p><i class="fas fa-envelope"></i> <a href="mailto:andresosta@hotmail.com">andresosta@hotmail.com</a></p>
       <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/juan-andres-osta-0a2b64140/" target="_blank">LinkedIn</a></p>
+      <p><i class="fas fa-file-pdf"></i> <a href="assets/CV-Juan-Andres-Osta.pdf" download>Descargar CV en PDF</a></p>
     </section>
   </main>
 
