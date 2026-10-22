@@ -42,7 +42,12 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .links a{text-decoration:none;font-size:.9rem;color:var(--muted);padding:6px 10px;border-radius:8px;transition:.2s}
 .links a:hover,.links a.on{color:var(--ink);background:var(--surface-2)}
 .theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);width:36px;height:36px;border-radius:10px;cursor:pointer;font-size:1rem}
+.lsw{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface);margin-left:6px}
+.lsw button{border:0;background:none;color:var(--muted);font:600 .75rem Inter,sans-serif;padding:0 10px;height:34px;cursor:pointer;transition:.2s}
+.lsw button:hover{color:var(--ink)}
+.lsw button.on{background:var(--accent);color:#fff}
 @media(max-width:760px){.links a:not(.keep){display:none}}
+@media(max-width:400px){.links a.keep{display:none}}
 
 /* HERO */
 .hero{position:relative;background:linear-gradient(135deg,var(--hero-a),var(--hero-b));color:#fff;overflow:hidden}
@@ -177,6 +182,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:48px 16px}
       <a href="#habilidades">Habilidades</a>
       <a href="#formacion">Formación</a>
       <a href="#contacto" class="keep">Contacto</a>
+      <div class="lsw" role="group" aria-label="Idioma / Language"><button data-l="es">ES</button><button data-l="en">EN</button><button data-l="it">IT</button></div>
       <button class="theme" id="themeBtn" aria-label="Cambiar tema">◐</button>
     </div>
   </div>
@@ -193,7 +199,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:48px 16px}
         <a class="btn primary" href="#contacto">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
           Contactar</a>
-        <a class="btn ghost" href="https://kunde11.github.io/CV-Juan/CV_Juan_Andres_Osta.pdf" target="_blank" rel="noopener">
+        <a class="btn ghost" href="CV_Juan_Andres_Osta.pdf" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
           Descargar CV</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/juan-andres-osta-0a2b64140/" target="_blank" rel="noopener">
@@ -369,7 +375,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:48px 16px}
 
 <script>
 // Typed role
-const roles=["DBA SQL Server","Soporte de Aplicaciones .NET","Always On · Patching · Grafana"];
+let roles=["DBA SQL Server","Soporte de Aplicaciones .NET","Always On · Patching · Grafana"];
 const el=document.getElementById("typed");let r=0,i=0,del=false;
 (function type(){const w=roles[r];el.textContent=w.slice(0,i);
   if(!del&&i<w.length)i++;else if(del&&i>0)i--;else if(!del){del=true;return setTimeout(type,1800)}else{del=false;r=(r+1)%roles.length}
@@ -397,8 +403,135 @@ btn.onclick=()=>{const dark=root.dataset.theme?root.dataset.theme==="dark":match
 // Form → mailto
 document.getElementById("form").onsubmit=e=>{e.preventDefault();const f=e.target;
   const body=encodeURIComponent(f.m.value+"\n\n— "+f.n.value+" ("+f.e.value+")");
-  location.href="mailto:andresosta@hotmail.com?subject="+encodeURIComponent("Contacto desde tu web - "+f.n.value)+"&body="+body};
+  location.href="mailto:andresosta@hotmail.com?subject="+encodeURIComponent(META[LANG].subj+f.n.value)+"&body="+body};
 document.getElementById("yr").textContent=new Date().getFullYear();
+function resetRoles(a){roles=a;r=0;i=0;del=false}
+
+// ===== Idiomas (ES / EN / IT) =====
+const T={
+"Sobre mí":["About me","Chi sono"],
+"Experiencia":["Experience","Esperienza"],
+"Habilidades":["Skills","Competenze"],
+"Formación":["Education","Formazione"],
+"Contacto":["Contact","Contatti"],
+"Disponible · Alicante, España":["Available · Alicante, Spain","Disponibile · Alicante, Spagna"],
+"Más de 5 años manteniendo vivos entornos productivos críticos: SQL Server, Always On, patching de cientos de servidores, monitorización con Grafana y soporte de aplicaciones .NET.":["5+ years keeping critical production environments running: SQL Server, Always On, patching hundreds of servers, Grafana monitoring and .NET application support.","Oltre 5 anni a mantenere operativi ambienti di produzione critici: SQL Server, Always On, patching di centinaia di server, monitoraggio con Grafana e supporto applicativo .NET."],
+"Contactar":["Contact me","Contattami"],
+"Descargar CV":["Download CV","Scarica CV"],
+"servidores SQL":["SQL servers","server SQL"],
+"5+ años":["5+ years","5+ anni"],
+"en producción":["in production","in produzione"],
+"años de experiencia en SQL Server":["years of SQL Server experience","anni di esperienza con SQL Server"],
+"servidores Windows / SQL gestionados":["Windows / SQL servers managed","server Windows / SQL gestiti"],
+"empresas en España (NTT Data, Logicalis…)":["companies in Spain (NTT Data, Logicalis…)","aziende in Spagna (NTT Data, Logicalis…)"],
+"resolución de incidencias":["incident resolution","risoluzione incidenti"],
+"01 · Perfil":["01 · Profile","01 · Profilo"],
+"DBA SQL Server y Soporte de Aplicaciones .NET":["SQL Server DBA and .NET Application Support","DBA SQL Server e Supporto Applicativo .NET"],
+"con más de 5 años de experiencia en entornos productivos de alta disponibilidad.":["with 5+ years of experience in high-availability production environments.","con oltre 5 anni di esperienza in ambienti di produzione ad alta disponibilità."],
+"Especializado en mantenimiento evolutivo, optimización de consultas, gestión de backups,":["Specialized in evolutionary maintenance, query optimization, backup management,","Specializzato in manutenzione evolutiva, ottimizzazione delle query, gestione dei backup,"],
+", monitorización de sistemas con":[", system monitoring with",", monitoraggio dei sistemi con"],
+"y resolución de incidencias de nivel 1/2. He gestionado infraestructuras de":["and L1/L2 incident resolution. I have managed infrastructures of","e risoluzione di incidenti di livello 1/2. Ho gestito infrastrutture di"],
+"más de 300 servidores SQL Server":["over 300 SQL Server servers","oltre 300 server SQL Server"],
+"y colaborado estrechamente con equipos de desarrollo y negocio.":["and worked closely with development and business teams.","e collaborato a stretto contatto con i team di sviluppo e di business."],
+"Dashboards, alertas y reportes de disponibilidad":["Dashboards, alerts and availability reports","Dashboard, alert e report di disponibilità"],
+"Automatización y scripting":["Automation and scripting","Automazione e scripting"],
+"Alicante, España":["Alicante, Spain","Alicante, Spagna"],
+"Analista en Sistemas · ORT Uruguay":["Systems Analyst · ORT Uruguay","Analista di Sistemi · ORT Uruguay"],
+"02 · Trayectoria":["02 · Career","02 · Percorso"],
+"Experiencia profesional":["Professional experience","Esperienza professionale"],
+"Soporte de Aplicaciones .NET / DBA SQL Server / Patching":[".NET Application Support / SQL Server DBA / Patching","Supporto Applicativo .NET / DBA SQL Server / Patching"],
+"Dic 2024 – Jun 2026":["Dec 2024 – Jun 2026","Dic 2024 – Giu 2026"],
+"Mantenimiento evolutivo y soporte de aplicaciones corporativas .NET en producción.":["Evolutionary maintenance and support of corporate .NET applications in production.","Manutenzione evolutiva e supporto di applicazioni aziendali .NET in produzione."],
+"Resolución de incidencias de nivel 2 y soporte a equipos de infraestructura y aplicaciones.":["Level 2 incident resolution and support for infrastructure and application teams.","Risoluzione di incidenti di livello 2 e supporto ai team di infrastruttura e applicazioni."],
+"Administración de SQL Server: backups, restores y monitorización de rendimiento.":["SQL Server administration: backups, restores and performance monitoring.","Amministrazione di SQL Server: backup, restore e monitoraggio delle prestazioni."],
+"Planificación y ejecución de patching y mantenimiento dentro de las ventanas establecidas, con verificación posterior de sistemas.":["Planning and execution of patching and maintenance within agreed windows, with post-change system verification.","Pianificazione ed esecuzione di patching e manutenzione nelle finestre stabilite, con verifica successiva dei sistemi."],
+"Automatización de tareas técnicas con PowerShell y scripting.":["Automation of technical tasks with PowerShell and scripting.","Automazione di attività tecniche con PowerShell e scripting."],
+"DBA SQL Server / Gestor de Patching":["SQL Server DBA / Patching Manager","DBA SQL Server / Responsabile Patching"],
+"Abr 2022 – Nov 2024":["Apr 2022 – Nov 2024","Apr 2022 – Nov 2024"],
+"Administración y mantenimiento de":["Administration and maintenance of","Amministrazione e manutenzione di"],
+"más de 300 servidores":["over 300","oltre 300 server"],
+"Windows y SQL Server en entorno enterprise.":["Windows and SQL Server servers in an enterprise environment.","Windows e SQL Server in ambiente enterprise."],
+"Planificación, coordinación y ejecución de patching y mantenimiento (APARs) en ventanas acordadas.":["Planning, coordination and execution of patching and maintenance (APARs) within agreed windows.","Pianificazione, coordinamento ed esecuzione di patching e manutenzione (APAR) nelle finestre concordate."],
+"Tablas de control en Excel que mejoraron la organización y trazabilidad del proceso de patching.":["Excel control sheets that improved the organization and traceability of the patching process.","Tabelle di controllo in Excel che hanno migliorato l'organizzazione e la tracciabilità del processo di patching."],
+"Morning Check diario y reportes de disponibilidad de sistemas críticos con":["Daily Morning Check and availability reports for critical systems with","Morning Check quotidiano e report di disponibilità dei sistemi critici con"],
+"Montaje y mantenimiento de":["Setup and maintenance of","Configurazione e manutenzione di"],
+", backups y restores.":[", backups and restores.",", backup e restore."],
+"Ver más":["See more","Vedi altro"],
+"Aplicación y verificación de parches de Windows y SQL Server.":["Applying and verifying Windows and SQL Server patches.","Applicazione e verifica di patch Windows e SQL Server."],
+"Gestión y resolución de incidencias derivadas del mantenimiento.":["Management and resolution of maintenance-related incidents.","Gestione e risoluzione degli incidenti derivanti dalla manutenzione."],
+"Automatización de tareas con PowerShell y coordinación con distintos equipos técnicos.":["Task automation with PowerShell and coordination with multiple technical teams.","Automazione di attività con PowerShell e coordinamento con diversi team tecnici."],
+"Programador de Base de Datos y Analista":["Database Developer & Analyst","Sviluppatore Database e Analista"],
+"Jun 2020 – Mar 2022":["Jun 2020 – Mar 2022","Giu 2020 – Mar 2022"],
+"DBA y programador SQL Server: creación y modificación de bases de datos, consultas, updates e inserts.":["SQL Server DBA and developer: creating and modifying databases, queries, updates and inserts.","DBA e sviluppatore SQL Server: creazione e modifica di database, query, update e insert."],
+"Desarrollo y mantenimiento de aplicaciones internas y para cliente en ASP.NET y .NET.":["Development and maintenance of internal and client applications in ASP.NET and .NET.","Sviluppo e manutenzione di applicazioni interne e per clienti in ASP.NET e .NET."],
+"Administración de IIS y publicación de aplicaciones.":["IIS administration and application deployment.","Amministrazione di IIS e pubblicazione di applicazioni."],
+"(Ministerio de Justicia · AXA · CNMV)":["(Ministry of Justice · AXA · CNMV)","(Ministero della Giustizia · AXA · CNMV)"],
+"Desarrollo y corrección de incidencias en bases de datos SQL Server y Oracle.":["Development and incident fixing on SQL Server and Oracle databases.","Sviluppo e correzione di incidenti su database SQL Server e Oracle."],
+"Análisis de código y modelos de datos para migraciones y resolución de problemas.":["Code and data model analysis for migrations and troubleshooting.","Analisi del codice e dei modelli dati per migrazioni e risoluzione dei problemi."],
+"Evolutivos de aplicaciones de escritorio en VB.NET y Visual Studio.":["Enhancements to desktop applications in VB.NET and Visual Studio.","Evolutive di applicazioni desktop in VB.NET e Visual Studio."],
+"Programador Web y Consultor .NET":["Web Developer & .NET Consultant","Sviluppatore Web e Consulente .NET"],
+"Desarrollo web, consultoría .NET y roles de Systems Manager.":["Web development, .NET consulting and Systems Manager roles.","Sviluppo web, consulenza .NET e ruoli di Systems Manager."],
+"Habilidades técnicas":["Technical skills","Competenze tecniche"],
+"Bases de datos":["Databases","Database"],
+"Optimización de consultas":["Query optimization","Ottimizzazione query"],
+"Monitorización":["Monitoring","Monitoraggio"],
+"Desarrollo":["Development","Sviluppo"],
+"Automatización y herramientas":["Automation & tools","Automazione e strumenti"],
+"Excel avanzado":["Advanced Excel","Excel avanzato"],
+"Alertas":["Alerts","Alert"],
+"Reportes de disponibilidad":["Availability reports","Report di disponibilità"],
+"Rendimiento SQL Server":["SQL Server performance","Prestazioni SQL Server"],
+"04 · Formación":["04 · Education","04 · Formazione"],
+"Formación e idiomas":["Education & languages","Formazione e lingue"],
+"Analista en Sistemas":["Systems Analyst","Analista di Sistemi"],
+"Programador Web":["Web Developer","Sviluppatore Web"],
+"Analista en Marketing":["Marketing Analyst","Analista di Marketing"],
+"Universidad ORT (Uruguay) · 2014 – 2017":["ORT University (Uruguay) · 2014 – 2017","Università ORT (Uruguay) · 2014 – 2017"],
+"Universidad ORT (Uruguay) · 2014 – 2016":["ORT University (Uruguay) · 2014 – 2016","Università ORT (Uruguay) · 2014 – 2016"],
+"Cursos y certificaciones":["Courses & certifications","Corsi e certificazioni"],
+"Analista GeneXus — aprobado con 80% (2017)":["GeneXus Analyst — passed with 80% (2017)","Analista GeneXus — superato con 80% (2017)"],
+"Sisnet Intensivo (70 horas)":["Sisnet Intensive (70 hours)","Sisnet Intensivo (70 ore)"],
+"Español":["Spanish","Spagnolo"],
+"Nativo":["Native","Madrelingua"],
+"Inglés":["English","Inglese"],
+"Avanzado · First Certificate":["Advanced · First Certificate","Avanzato · First Certificate"],
+"Italiano":["Italian","Italiano"],
+"Básico":["Basic","Base"],
+"05 · Contacto":["05 · Contact","05 · Contatti"],
+"¿Hablamos?":["Let's talk","Parliamo?"],
+"Abierto a nuevas oportunidades como DBA SQL Server, soporte .NET o perfiles de base de datos.":["Open to new opportunities as a SQL Server DBA, .NET support or database roles.","Aperto a nuove opportunità come DBA SQL Server, supporto .NET o ruoli database."],
+"Nombre":["Name","Nome"],
+"Correo electrónico":["Email","Email"],
+"Mensaje":["Message","Messaggio"],
+"Enviar mensaje →":["Send message →","Invia messaggio →"],
+"Juan Andrés Osta · Referencias disponibles a petición":["Juan Andrés Osta · References available on request","Juan Andrés Osta · Referenze disponibili su richiesta"]
+};
+const ROLES={
+  es:["DBA SQL Server","Soporte de Aplicaciones .NET","Always On · Patching · Grafana"],
+  en:["SQL Server DBA",".NET Application Support","Always On · Patching · Grafana"],
+  it:["DBA SQL Server","Supporto Applicativo .NET","Always On · Patching · Grafana"]};
+const META={
+  es:{title:"Juan Andrés Osta · DBA SQL Server",subj:"Contacto desde tu web - ",theme:"Cambiar tema"},
+  en:{title:"Juan Andrés Osta · SQL Server DBA",subj:"Contact from your website - ",theme:"Toggle theme"},
+  it:{title:"Juan Andrés Osta · DBA SQL Server",subj:"Contatto dal tuo sito - ",theme:"Cambia tema"}};
+const i18nNodes=[];
+(function(){const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentNode.closest("script,style")?2:1});
+  while(w.nextNode()){const n=w.currentNode,k=n.nodeValue.trim();if(T[k])i18nNodes.push([n,n.nodeValue,k])}})();
+let LANG="es";
+function setLang(l){
+  if(!ROLES[l])l="es";LANG=l;const ix={en:0,it:1}[l];
+  i18nNodes.forEach(([n,orig,k])=>{n.nodeValue=ix===undefined?orig:orig.replace(k,T[k][ix])});
+  document.documentElement.lang=l;document.title=META[l].title;
+  document.getElementById("themeBtn").setAttribute("aria-label",META[l].theme);
+  document.querySelectorAll(".lsw button").forEach(b=>b.classList.toggle("on",b.dataset.l===l));
+  if(typeof resetRoles==="function")resetRoles(ROLES[l]);
+  try{localStorage.setItem("lang",l)}catch(e){}
+}
+document.querySelectorAll(".lsw button").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+(function(){let l=new URLSearchParams(location.search).get("lang");
+  if(!l){try{l=localStorage.getItem("lang")}catch(e){}}
+  if(!l){const n=(navigator.language||"es").slice(0,2);l=ROLES[n]?n:"es"}
+  setLang(l)})();
 </script>
 </body>
 </html>
