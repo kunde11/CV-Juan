@@ -2,6 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VXG112FTRZ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-VXG112FTRZ');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Juan Andrés Osta · DBA SQL Server</title>
 <meta name="description" content="Juan Andrés Osta — DBA SQL Server y Soporte de Aplicaciones .NET. Alicante, España.">
@@ -532,6 +538,14 @@ document.querySelectorAll(".lsw button").forEach(b=>b.onclick=()=>setLang(b.data
   if(!l){try{l=localStorage.getItem("lang")}catch(e){}}
   if(!l){const n=(navigator.language||"es").slice(0,2);l=ROLES[n]?n:"es"}
   setLang(l)})();
+
+// Eventos de Analytics
+function track(n,p){try{gtag("event",n,p||{})}catch(e){}}
+document.querySelectorAll('a[href$=".pdf"]').forEach(a=>a.addEventListener("click",()=>track("descargar_cv",{idioma:LANG})));
+document.querySelectorAll('a[href*="linkedin.com"]').forEach(a=>a.addEventListener("click",()=>track("click_linkedin")));
+document.querySelectorAll('a[href^="mailto:"],a[href^="tel:"]').forEach(a=>a.addEventListener("click",()=>track("click_contacto",{tipo:a.protocol.replace(":","")})));
+document.querySelectorAll(".lsw button").forEach(b=>b.addEventListener("click",()=>track("cambiar_idioma",{idioma:b.dataset.l})));
+document.getElementById("form").addEventListener("submit",()=>track("enviar_formulario"));
 </script>
 </body>
 </html>
